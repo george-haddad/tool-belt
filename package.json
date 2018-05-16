@@ -6,7 +6,8 @@
   "author": "George Haddad <george.dma@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "parcel public/index.html"
+    "start": "parcel public/index.html",
+    "test": "eslint src && flow"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.3",
