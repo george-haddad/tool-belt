@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
 
 type Props = {
   classes: any,
@@ -29,6 +30,12 @@ const styles = theme => ({
   control: {
     padding: theme.spacing.unit * 2,
   },
+  button: {
+    margin: theme.spacing.unit,
+  },
+  input: {
+    display: 'none',
+  },
 });
 
 class SidePanel extends Component<Props, State> {
@@ -50,21 +57,23 @@ class SidePanel extends Component<Props, State> {
         <Grid item xs={12}>
           <Grid
             container
-            spacing={16}
+            spacing={8}
             className={classes.demo}
             alignItems={alignItems}
             direction={direction}
             justify={justify}
           >
-            <Grid key="1" item>
-              <p>One</p>
-            </Grid>
-            <Grid key="2" item>
-              <p>Two</p>
-            </Grid>
-            <Grid key="3" item>
-              <p>Three</p>
-            </Grid>
+            <Button variant="outlined" className={classes.button}>
+              AXFR
+            </Button>
+
+            <Button disabled variant="outlined" className={classes.button}>
+              Space-X
+            </Button>
+
+            <Button disabled variant="outlined" className={classes.button}>
+              About
+            </Button>
           </Grid>
         </Grid>
       </Grid>

@@ -1,5 +1,8 @@
 {
   "presets": ["env", "flow"],
-  "plugins": ["transform-react-jsx"],
+  "plugins": [
+    "transform-react-jsx",
+    ["transform-class-properties", { "spec": true }]
+  ],
   "ignore": ["foo.js", "bar/**/*.js"]
 }
