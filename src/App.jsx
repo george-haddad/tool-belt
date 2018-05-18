@@ -1,23 +1,21 @@
+// @flow
+
 import React, { Component } from 'react';
-import Button from '@material-ui/core/Button';
+import SplitPane from 'react-split-pane';
+import SidePanel from './components/side-panel';
 import AxfrPanel from './components/axfr';
 import './App.css';
 
-const name = 'George';
-
-const elements = (
-  <div>
-    <h1>Hello, {name}</h1>
-    <Button variant="raised" color="primary">
-      Click me
-    </Button>
+const sidePanel = (
+  <SplitPane split="vertical" defaultSize="200">
+    <SidePanel />
     <AxfrPanel />
-  </div>
+  </SplitPane>
 );
 
-class App extends Component {
+class App extends Component<{}> {
   render() {
-    return elements;
+    return sidePanel;
   }
 }
 
