@@ -87,35 +87,37 @@ class AxfrPanel extends Component<Props, State> {
 
   axfrOnlineCheck = () => {
     const { domain } = this.state.axfr.onlinecheck;
-    superagent
-      .get(`http://api.axfrcheck.com/api/check/axfr/${domain}`)
-      .set('Accept', 'application/json')
-      .set('Access-Control-Allow-Origin', '*')
-      .then(res => {
-        if (res.body.data[0].affected_dns) {
-          const affectedDns = res.body.data[0].affected_dns;
+    if (domain.length > 0) {
+      superagent
+        .get(`http://api.axfrcheck.com/api/check/axfr/${domain}`)
+        .set('Accept', 'application/json')
+        .set('Access-Control-Allow-Origin', '*')
+        .then(res => {
+          if (res.body.data[0].affected_dns) {
+            const affectedDns = res.body.data[0].affected_dns;
+            this.setState({
+              axfr: {
+                onlinecheck: {
+                  domain: this.state.axfr.onlinecheck.domain,
+                  affectedDns,
+                  error: this.state.axfr.onlinecheck.error,
+                },
+              },
+            });
+          }
+        })
+        .catch(() => {
           this.setState({
             axfr: {
               onlinecheck: {
                 domain: this.state.axfr.onlinecheck.domain,
-                affectedDns,
-                error: this.state.axfr.onlinecheck.error,
+                affectedDns: this.state.axfr.onlinecheck.affectedDns,
+                error: true,
               },
             },
           });
-        }
-      })
-      .catch(() => {
-        this.setState({
-          axfr: {
-            onlinecheck: {
-              domain: this.state.axfr.onlinecheck.domain,
-              affectedDns: this.state.axfr.onlinecheck.affectedDns,
-              error: true,
-            },
-          },
         });
-      });
+    }
   };
 
   render() {
