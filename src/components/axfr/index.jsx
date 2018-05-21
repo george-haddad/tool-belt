@@ -89,7 +89,7 @@ class AxfrPanel extends Component<Props, State> {
     const { domain } = this.state.axfr.onlinecheck;
     if (domain.length > 0) {
       superagent
-        .get(`http://api.axfrcheck.com/api/check/axfr/${domain}`)
+        .get(`//api.axfrcheck.com/api/check/axfr/${domain}`)
         .set('Accept', 'application/json')
         // .set('Access-Control-Allow-Origin', '*')
         .then(res => {
