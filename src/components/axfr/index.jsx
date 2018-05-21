@@ -89,9 +89,12 @@ class AxfrPanel extends Component<Props, State> {
     const { domain } = this.state.axfr.onlinecheck;
     if (domain.length > 0) {
       superagent
-        .get(`//api.axfrcheck.com/api/check/axfr/${domain}`)
+        .get(`http://api.axfrcheck.com/api/check/axfr/${domain}`)
         .set('Accept', 'application/json')
-        .set('Access-Control-Allow-Origin', '*')
+        .set(
+          'Access-Control-Allow-Origin',
+          'https://nifty-brattain-c4b546.netlify.com/',
+        )
         .then(res => {
           if (res.body.data[0].affected_dns) {
             const affectedDns = res.body.data[0].affected_dns;
