@@ -91,7 +91,7 @@ class AxfrPanel extends Component<Props, State> {
       superagent
         .get(`http://api.axfrcheck.com/api/check/axfr/${domain}`)
         .set('Accept', 'application/json')
-        .set('Access-Control-Allow-Origin', '*')
+        // .set('Access-Control-Allow-Origin', '*')
         .then(res => {
           if (res.body.data[0].affected_dns) {
             const affectedDns = res.body.data[0].affected_dns;
