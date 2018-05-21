@@ -33,6 +33,7 @@
     "@material-ui/icons": "^1.0.0-rc.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "react-split-pane": "^0.1.77"
+    "react-split-pane": "^0.1.77",
+    "superagent": "^3.8.3"
   }
 }
