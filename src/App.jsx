@@ -23,7 +23,7 @@ const styles = theme => ({
   },
 });
 
-class App extends Component<Props, State> {
+class App extends Component<Props, {}> {
   mainPanel = () => {
     const { classes } = this.props;
     return (
