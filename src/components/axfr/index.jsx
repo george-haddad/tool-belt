@@ -39,6 +39,7 @@ class AxfrPanel extends Component<Props, State> {
     return (
       <div className={classes.root}>
         <Grid
+          item
           container
           spacing={32}
           xs={12}
