@@ -16,15 +16,37 @@ type Props = {
   classes: any,
 };
 
-type State = {};
+type State = {
+  direction: string,
+  justify: string,
+  alignItems: string,
+};
 
 class AxfrPanel extends Component<Props, State> {
-  gridPanel = () => {
+  constructor(props) {
+    super(props);
+    this.state = {
+      direction: 'column',
+      justify: 'center',
+      alignItems: 'flex-start',
+    };
+  }
+
+  render() {
     const { classes } = this.props;
+    const { alignItems, direction, justify } = this.state;
+
     return (
       <div className={classes.root}>
-        <Grid container spacing={24}>
-          <Grid item xs={12}>
+        <Grid
+          container
+          spacing={32}
+          xs={12}
+          alignItems={alignItems}
+          direction={direction}
+          justify={justify}
+        >
+          <Grid item>
             <AxfrCheck />
           </Grid>
           <Grid item>
@@ -33,10 +55,6 @@ class AxfrPanel extends Component<Props, State> {
         </Grid>
       </div>
     );
-  };
-
-  render() {
-    return this.gridPanel();
   }
 }
 

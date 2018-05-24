@@ -40,7 +40,6 @@ class SidePanel extends Component<Props, State> {
 
     return (
       <Grid
-        item
         container
         className={classes.root}
         xs={12}
