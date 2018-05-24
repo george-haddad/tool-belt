@@ -11,15 +11,10 @@ type Props = {
   classes: any,
 };
 
-const styles = theme => ({
+const styles = () => ({
   root: {
     flexGrow: 1,
     alignItems: 'flex-start',
-  },
-  paper: {
-    padding: theme.spacing.unit * 2,
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
   },
 });
 
