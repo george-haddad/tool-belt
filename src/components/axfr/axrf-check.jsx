@@ -9,6 +9,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import green from '@material-ui/core/colors/green';
 import blue from '@material-ui/core/colors/blue';
@@ -211,6 +212,9 @@ class AxfrCheck extends Component<Props, State> {
 
     return (
       <Paper className={classes.paper}>
+        <Typography variant="title" align="left">
+          AXFR Online Check
+        </Typography>
         <div className={classes.buttonRoot}>
           <FormControl className={classes.margin}>
             <TextField
