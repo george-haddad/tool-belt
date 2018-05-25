@@ -23,8 +23,8 @@ class App extends Component<Props, {}> {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-        <Grid container spacing={16}>
-          <Grid item xs={12} sm={3} md={2} lg={2} xl={1}>
+        <Grid container spacing={8}>
+          <Grid item xs={12} sm={3} md={1} lg={1} xl={1}>
             <SidePanel />
           </Grid>
           <Grid item xs={12} sm={9} md={10} lg={10} xl={11}>

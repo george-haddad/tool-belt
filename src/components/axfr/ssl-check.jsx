@@ -8,7 +8,10 @@ import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import LinearProgress from '@material-ui/core/LinearProgress';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
 import superagent from 'superagent';
+import { FormGroup } from '@material-ui/core';
 
 const styles = theme => ({
   paper: {
@@ -84,7 +87,7 @@ class SslCheck extends Component<Props, State> {
                 domain: this.state.domain,
                 heartbleed,
                 ccs,
-                error: this.state.error,
+                error: false,
               });
             }
           })
@@ -107,6 +110,9 @@ class SslCheck extends Component<Props, State> {
 
     return (
       <Paper className={classes.paper}>
+        <Typography variant="title" align="left">
+          SSL Online Check
+        </Typography>
         <FormControl className={classes.margin}>
           <TextField
             id="domain"
@@ -118,21 +124,30 @@ class SslCheck extends Component<Props, State> {
             margin="normal"
           />
         </FormControl>
+
+        <div>
+          <FormControl>
+            <FormGroup row>
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={heartbleed}
+                    value="Heartbleed"
+                    color="secondary"
+                  />
+                }
+                label="Heartbleed"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox checked={ccs} value="CCS" color="secondary" />
+                }
+                label="CCS"
+              />
+            </FormGroup>
+          </FormControl>
+        </div>
         <br />
-
-        {loading && (
-          <div className={classes.root}>
-            <LinearProgress color="primary" />
-          </div>
-        )}
-
-        <Typography variant="body1" gutterBottom align="left">
-          {heartbleed ? 'Heartbleed = true' : 'Heartbleed = false'}
-        </Typography>
-        <Typography variant="body1" gutterBottom align="left">
-          {ccs ? 'CCS = true' : 'CCS = false'}
-        </Typography>
-
         <Button
           variant="outlined"
           color="primary"
@@ -141,6 +156,12 @@ class SslCheck extends Component<Props, State> {
         >
           Submit
         </Button>
+
+        {loading && (
+          <div className={classes.root}>
+            <LinearProgress color="primary" />
+          </div>
+        )}
       </Paper>
     );
   }
