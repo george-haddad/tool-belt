@@ -55,7 +55,7 @@ type Props = {
 type State = {
   loading: boolean,
   domain: string,
-  data: {
+  data: ?{
     affected_domain_count: number,
     created_at: string,
     domain: {
@@ -77,6 +77,7 @@ class DomainCheck extends Component<Props, State> {
       loading: false,
       domain: '',
       error: false,
+      data: undefined,
     };
   }
 
@@ -150,6 +151,7 @@ class DomainCheck extends Component<Props, State> {
               type="date"
               className={classes.textField}
               margin="normal"
+              disabled
               InputLabelProps={{
                 shrink: true,
               }}
