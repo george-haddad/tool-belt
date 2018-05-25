@@ -10,7 +10,6 @@ type Props = {
 };
 
 type State = {
-  direction: string,
   justify: string,
   alignItems: string,
 };
@@ -28,7 +27,6 @@ class SidePanel extends Component<Props, State> {
   constructor(props) {
     super(props);
     this.state = {
-      direction: 'column',
       justify: 'center',
       alignItems: 'flex-start',
     };
@@ -36,17 +34,16 @@ class SidePanel extends Component<Props, State> {
 
   render() {
     const { classes } = this.props;
-    const { alignItems, direction, justify } = this.state;
+    const { alignItems, justify } = this.state;
 
     return (
       <Grid
         item
         container
         className={classes.root}
-        xs={12}
+        xs={11}
         spacing={8}
         alignItems={alignItems}
-        direction={direction}
         justify={justify}
       >
         <Button variant="outlined" className={classes.button}>
