@@ -5,6 +5,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import AxfrCheck from './axrf-check';
 import SslCheck from './ssl-check';
+import DomainCheck from './domain-check';
 
 const styles = () => ({
   root: {
@@ -17,7 +18,6 @@ type Props = {
 };
 
 type State = {
-  direction: string,
   justify: string,
   alignItems: string,
 };
@@ -26,15 +26,14 @@ class AxfrPanel extends Component<Props, State> {
   constructor(props) {
     super(props);
     this.state = {
-      direction: 'column',
-      justify: 'center',
+      justify: 'flex-start',
       alignItems: 'flex-start',
     };
   }
 
   render() {
     const { classes } = this.props;
-    const { alignItems, direction, justify } = this.state;
+    const { alignItems, justify } = this.state;
 
     return (
       <div className={classes.root}>
@@ -44,14 +43,16 @@ class AxfrPanel extends Component<Props, State> {
           spacing={32}
           xs={12}
           alignItems={alignItems}
-          direction={direction}
           justify={justify}
         >
           <Grid item>
-            <AxfrCheck />
+            <DomainCheck />
           </Grid>
           <Grid item>
             <SslCheck />
+          </Grid>
+          <Grid item>
+            <AxfrCheck />
           </Grid>
         </Grid>
       </div>
