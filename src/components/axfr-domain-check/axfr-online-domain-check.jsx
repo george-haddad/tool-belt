@@ -70,7 +70,7 @@ type State = {
   error: boolean,
 };
 
-class DomainCheck extends Component<Props, State> {
+class AxfrOnlineDomainCheck extends Component<Props, State> {
   constructor(props) {
     super(props);
     this.state = {
@@ -209,4 +209,4 @@ class DomainCheck extends Component<Props, State> {
   }
 }
 
-export default withStyles(styles)(DomainCheck);
+export default withStyles(styles)(AxfrOnlineDomainCheck);

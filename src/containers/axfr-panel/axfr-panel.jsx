@@ -4,9 +4,9 @@ import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
-import AxfrCheck from './axrf-check';
-import SslCheck from './ssl-check';
-import DomainCheck from './domain-check';
+import AxfrOnlineCheck from '../../components/axfr-check';
+import AxfrOnlineSslCheck from '../../components/axfr-ssl-check';
+import AxfrOnlineDomainCheck from '../../components/axfr-domain-check';
 
 const styles = () => ({
   root: {
@@ -47,13 +47,13 @@ class AxfrPanel extends Component<Props, State> {
           justify={justify}
         >
           <Grid item>
-            <DomainCheck />
+            <AxfrOnlineCheck />
           </Grid>
           <Grid item>
-            <SslCheck />
+            <AxfrOnlineSslCheck />
           </Grid>
           <Grid item>
-            <AxfrCheck />
+            <AxfrOnlineDomainCheck />
           </Grid>
         </Grid>
       </div>

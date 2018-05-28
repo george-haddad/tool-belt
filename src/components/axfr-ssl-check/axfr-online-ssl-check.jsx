@@ -10,8 +10,8 @@ import Typography from '@material-ui/core/Typography';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import superagent from 'superagent';
 import { FormGroup } from '@material-ui/core';
+import superagent from 'superagent';
 
 const styles = theme => ({
   paper: {
@@ -47,7 +47,7 @@ type State = {
   error: boolean,
 };
 
-class SslCheck extends Component<Props, State> {
+class AxfrOnlineSslCheck extends Component<Props, State> {
   constructor(props) {
     super(props);
     this.state = {
@@ -167,4 +167,4 @@ class SslCheck extends Component<Props, State> {
   }
 }
 
-export default withStyles(styles)(SslCheck);
+export default withStyles(styles)(AxfrOnlineSslCheck);

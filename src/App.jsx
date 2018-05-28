@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import SidePanel from './containers/side-panel';
-import AxfrPanel from './components/axfr';
+import AxfrPanel from './containers/axfr-panel';
 import './App.css';
 
 type Props = {

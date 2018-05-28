@@ -113,7 +113,7 @@ type State = {
   error: boolean,
 };
 
-class AxfrCheck extends Component<Props, State> {
+class AxfrOnlineCheck extends Component<Props, State> {
   constructor(props) {
     super(props);
     this.state = {
@@ -257,4 +257,4 @@ class AxfrCheck extends Component<Props, State> {
   }
 }
 
-export default withStyles(styles)(AxfrCheck);
+export default withStyles(styles)(AxfrOnlineCheck);
