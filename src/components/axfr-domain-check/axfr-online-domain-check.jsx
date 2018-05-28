@@ -144,28 +144,13 @@ class AxfrOnlineDomainCheck extends Component<Props, State> {
         </FormControl>
 
         <div>
-          <FormControl>
-            <TextField
-              id="created-at"
-              label="Created at"
-              type="date"
-              className={classes.textField}
-              margin="normal"
-              disabled
-              InputLabelProps={{
-                shrink: true,
-              }}
-              value={
-                data &&
-                moment(Date.parse('Tue, 24 May 2016 12:17:42 GMT')).format(
-                  'YYYY-MM-DD',
-                )
-              }
-            />
-          </FormControl>
           <br />
+          <Typography variant="subheading" align="left">
+            Created at:{data &&
+              ` ${moment(Date.parse(data.created_at)).format('YYYY-MM-DD')}`}
+          </Typography>
 
-          <Typography variant="subheading" align="center">
+          <Typography variant="subheading" align="left">
             Affected DNS
           </Typography>
           <List className={classes.listRoot} subheader={<li />}>
@@ -177,7 +162,7 @@ class AxfrOnlineDomainCheck extends Component<Props, State> {
               ))}
           </List>
 
-          <Typography variant="subheading" align="center">
+          <Typography variant="subheading" align="left">
             Affected Domains
           </Typography>
           <List className={classes.listRoot} subheader={<li />}>
