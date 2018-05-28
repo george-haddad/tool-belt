@@ -13,27 +13,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import { FormGroup } from '@material-ui/core';
 import superagent from 'superagent';
 
-const styles = theme => ({
-  paper: {
-    padding: theme.spacing.unit * 2,
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  },
-  textField: {
-    marginLeft: theme.spacing.unit,
-    marginRight: theme.spacing.unit,
-    width: 200,
-  },
-  button: {
-    margin: theme.spacing.unit,
-  },
-  input: {
-    display: 'none',
-  },
-  progressRoot: {
-    flexGrow: 1,
-  },
-});
+import styles from './axfr-online-ssl-check-styles';
 
 type Props = {
   classes: any,
