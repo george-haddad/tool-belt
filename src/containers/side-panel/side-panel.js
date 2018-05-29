@@ -5,13 +5,16 @@ import React, { Component } from 'react';
 import SidePanelButtons from '../../components/side-panel-buttons';
 
 type Props = {
-  buttonNames: Array<string>,
+  buttonData: Array<{
+    name: string,
+    route: string,
+  }>,
 };
 
 class SidePanel extends Component<Props, {}> {
   sidePanelButtons = () => {
-    const { buttonNames } = this.props;
-    return React.createElement(SidePanelButtons, { buttonNames });
+    const { buttonData } = this.props;
+    return React.createElement(SidePanelButtons, { buttonData });
   };
 
   render() {

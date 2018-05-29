@@ -39,6 +39,19 @@ class AxfrOnlineSslCheck extends Component<Props, State> {
     };
   }
 
+  onKeyDown = (event: any) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      this.handleButtonClick();
+    }
+  };
+
+  onSubmit = (event: any) => {
+    event.preventDefault();
+    event.stopPropagation();
+    this.handleButtonClick();
+  };
+
   handleDomainChange = (event: any) => {
     this.setState({
       domain: event.target.value,
@@ -102,6 +115,8 @@ class AxfrOnlineSslCheck extends Component<Props, State> {
             value={domain}
             onChange={event => this.handleDomainChange(event)}
             margin="normal"
+            onSubmit={this.onSubmit}
+            onKeyDown={this.onKeyDown}
           />
         </FormControl>
 
