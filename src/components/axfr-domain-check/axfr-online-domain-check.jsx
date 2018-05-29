@@ -49,12 +49,17 @@ class AxfrOnlineDomainCheck extends Component<Props, State> {
     };
   }
 
-  handleDomainChange = (event: any) => {
-    this.setState({
-      domain: event.target.value,
-      error: this.state.error,
-      data: this.state.data,
-    });
+  onKeyDown = (event: any) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      this.handleButtonClick();
+    }
+  };
+
+  onSubmit = (event: any) => {
+    event.preventDefault();
+    event.stopPropagation();
+    this.handleButtonClick();
   };
 
   handleButtonClick = () => {
@@ -90,6 +95,14 @@ class AxfrOnlineDomainCheck extends Component<Props, State> {
     }
   };
 
+  handleDomainChange = (event: any) => {
+    this.setState({
+      domain: event.target.value,
+      error: this.state.error,
+      data: this.state.data,
+    });
+  };
+
   render() {
     const { classes } = this.props;
     const { loading, domain, error, data } = this.state;
@@ -99,17 +112,22 @@ class AxfrOnlineDomainCheck extends Component<Props, State> {
         <Typography variant="title" align="left">
           Online Domain Check
         </Typography>
-        <FormControl className={classes.margin}>
-          <TextField
-            id="domain"
-            label="Domain"
-            error={error}
-            className={classes.textField}
-            value={domain}
-            onChange={event => this.handleDomainChange(event)}
-            margin="normal"
-          />
-        </FormControl>
+
+        <form>
+          <FormControl className={classes.margin}>
+            <TextField
+              id="domain"
+              label="Domain"
+              error={error}
+              className={classes.textField}
+              value={domain}
+              onChange={event => this.handleDomainChange(event)}
+              margin="normal"
+              onSubmit={this.onSubmit}
+              onKeyDown={this.onKeyDown}
+            />
+          </FormControl>
+        </form>
 
         <div>
           <br />
