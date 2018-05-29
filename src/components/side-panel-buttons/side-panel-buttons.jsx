@@ -5,8 +5,11 @@ import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 
+import styles from './side-panel-buttons-styles';
+
 type Props = {
   classes: any,
+  buttonNames: Array<string>,
 };
 
 type State = {
@@ -14,16 +17,7 @@ type State = {
   alignItems: string,
 };
 
-const styles = theme => ({
-  root: {
-    flexGrow: 1,
-  },
-  button: {
-    margin: theme.spacing.unit,
-  },
-});
-
-class SidePanel extends Component<Props, State> {
+class SidePanelButtons extends Component<Props, State> {
   constructor(props) {
     super(props);
     this.state = {
@@ -33,7 +27,7 @@ class SidePanel extends Component<Props, State> {
   }
 
   render() {
-    const { classes } = this.props;
+    const { classes, buttonNames } = this.props;
     const { alignItems, justify } = this.state;
 
     return (
@@ -46,20 +40,19 @@ class SidePanel extends Component<Props, State> {
         alignItems={alignItems}
         justify={justify}
       >
-        <Button variant="outlined" className={classes.button}>
-          AXFR
-        </Button>
-
-        <Button disabled variant="outlined" className={classes.button}>
-          Space-X
-        </Button>
-
-        <Button disabled variant="outlined" className={classes.button}>
-          About
-        </Button>
+        {buttonNames &&
+          buttonNames.map(buttonName => (
+            <Button
+              variant="outlined"
+              className={classes.button}
+              key={buttonName}
+            >
+              {buttonName}
+            </Button>
+          ))}
       </Grid>
     );
   }
 }
 
-export default withStyles(styles)(SidePanel);
+export default withStyles(styles)(SidePanelButtons);

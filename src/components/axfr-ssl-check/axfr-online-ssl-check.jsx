@@ -10,30 +10,10 @@ import Typography from '@material-ui/core/Typography';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import superagent from 'superagent';
 import { FormGroup } from '@material-ui/core';
+import superagent from 'superagent';
 
-const styles = theme => ({
-  paper: {
-    padding: theme.spacing.unit * 2,
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  },
-  textField: {
-    marginLeft: theme.spacing.unit,
-    marginRight: theme.spacing.unit,
-    width: 200,
-  },
-  button: {
-    margin: theme.spacing.unit,
-  },
-  input: {
-    display: 'none',
-  },
-  progressRoot: {
-    flexGrow: 1,
-  },
-});
+import styles from './axfr-online-ssl-check-styles';
 
 type Props = {
   classes: any,
@@ -47,7 +27,7 @@ type State = {
   error: boolean,
 };
 
-class SslCheck extends Component<Props, State> {
+class AxfrOnlineSslCheck extends Component<Props, State> {
   constructor(props) {
     super(props);
     this.state = {
@@ -167,4 +147,4 @@ class SslCheck extends Component<Props, State> {
   }
 }
 
-export default withStyles(styles)(SslCheck);
+export default withStyles(styles)(AxfrOnlineSslCheck);

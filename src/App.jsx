@@ -3,8 +3,8 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import SidePanel from './components/side-panel';
-import AxfrPanel from './components/axfr';
+import SidePanel from './containers/side-panel';
+import AxfrPanel from './containers/axfr-panel';
 import './App.css';
 
 type Props = {
@@ -25,7 +25,7 @@ class App extends Component<Props, {}> {
       <div className={classes.root}>
         <Grid container spacing={8}>
           <Grid item xs={12} sm={3} md={1} lg={1} xl={1}>
-            <SidePanel />
+            <SidePanel buttonNames={['AXFR', 'Space-X', 'About']} />
           </Grid>
           <Grid item xs={12} sm={9} md={10} lg={10} xl={11}>
             <AxfrPanel />

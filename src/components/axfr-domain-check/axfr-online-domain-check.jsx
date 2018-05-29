@@ -14,39 +14,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import superagent from 'superagent';
 import moment from 'moment';
 
-const styles = theme => ({
-  paper: {
-    padding: theme.spacing.unit * 2,
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  },
-  textField: {
-    marginLeft: theme.spacing.unit,
-    marginRight: theme.spacing.unit,
-    width: 200,
-  },
-  button: {
-    margin: theme.spacing.unit,
-  },
-  progressRoot: {
-    flexGrow: 1,
-  },
-  listRoot: {
-    width: '100%',
-    maxWidth: 360,
-    backgroundColor: theme.palette.background.paper,
-    position: 'relative',
-    overflow: 'auto',
-    maxHeight: 200,
-  },
-  listSection: {
-    backgroundColor: 'inherit',
-  },
-  ul: {
-    backgroundColor: 'inherit',
-    padding: 0,
-  },
-});
+import styles from './axfr-online-domain-check-styles';
 
 type Props = {
   classes: any,
@@ -70,7 +38,7 @@ type State = {
   error: boolean,
 };
 
-class DomainCheck extends Component<Props, State> {
+class AxfrOnlineDomainCheck extends Component<Props, State> {
   constructor(props) {
     super(props);
     this.state = {
@@ -144,28 +112,13 @@ class DomainCheck extends Component<Props, State> {
         </FormControl>
 
         <div>
-          <FormControl>
-            <TextField
-              id="created-at"
-              label="Created at"
-              type="date"
-              className={classes.textField}
-              margin="normal"
-              disabled
-              InputLabelProps={{
-                shrink: true,
-              }}
-              value={
-                data &&
-                moment(Date.parse('Tue, 24 May 2016 12:17:42 GMT')).format(
-                  'YYYY-MM-DD',
-                )
-              }
-            />
-          </FormControl>
           <br />
+          <Typography variant="subheading" align="left">
+            Created at:{data &&
+              ` ${moment(Date.parse(data.created_at)).format('YYYY-MM-DD')}`}
+          </Typography>
 
-          <Typography variant="subheading" align="center">
+          <Typography variant="subheading" align="left">
             Affected DNS
           </Typography>
           <List className={classes.listRoot} subheader={<li />}>
@@ -177,7 +130,7 @@ class DomainCheck extends Component<Props, State> {
               ))}
           </List>
 
-          <Typography variant="subheading" align="center">
+          <Typography variant="subheading" align="left">
             Affected Domains
           </Typography>
           <List className={classes.listRoot} subheader={<li />}>
@@ -209,4 +162,4 @@ class DomainCheck extends Component<Props, State> {
   }
 }
 
-export default withStyles(styles)(DomainCheck);
+export default withStyles(styles)(AxfrOnlineDomainCheck);
