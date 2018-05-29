@@ -4,21 +4,15 @@ import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
-import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import CircularProgress from '@material-ui/core/CircularProgress';
-import StartIcon from '@material-ui/icons/KeyboardArrowRight';
-import ErrorIcon from '@material-ui/icons/PriorityHigh';
-import CheckIcon from '@material-ui/icons/Check';
-import HourGlassIcon from '@material-ui/icons/HourglassEmpty';
-import classNames from 'classnames';
 import superagent from 'superagent';
 
 import styles from './axfr-online-check-styles';
+import CircleLoadingButton from '../circle-loading-button';
 
 type Props = {
   classes: any,
@@ -94,40 +88,9 @@ class AxfrOnlineCheck extends Component<Props, State> {
     }
   };
 
-  renderAxfrStatus = () => {
-    const { axfrStatus, loading } = this.state;
-
-    if (loading) {
-      return <HourGlassIcon />;
-    }
-
-    switch (axfrStatus) {
-      case 'start': {
-        return <StartIcon />;
-      }
-
-      case 'clean': {
-        return <CheckIcon />;
-      }
-
-      case 'vulnrable': {
-        return <ErrorIcon />;
-      }
-
-      default: {
-        return <StartIcon />;
-      }
-    }
-  };
-
   render() {
     const { classes } = this.props;
     const { domain, affectedDns, error, loading, axfrStatus } = this.state;
-    const buttonClassname = classNames({
-      [classes.buttonDefault]: axfrStatus === 'start',
-      [classes.buttonClean]: axfrStatus === 'clean',
-      [classes.buttonVulnrable]: axfrStatus === 'vulnrable',
-    });
 
     return (
       <Paper className={classes.paper}>
@@ -146,23 +109,16 @@ class AxfrOnlineCheck extends Component<Props, State> {
               margin="normal"
             />
           </FormControl>
-          <div className={classes.wrapper}>
-            <Button
-              variant="fab"
-              className={buttonClassname}
-              onClick={this.handleButtonClick}
-            >
-              {this.renderAxfrStatus()}
-            </Button>
 
-            {loading && (
-              <CircularProgress size={68} className={classes.fabProgress} />
-            )}
-          </div>
+          <CircleLoadingButton
+            loading={loading}
+            icon={axfrStatus}
+            handleButtonClick={this.handleButtonClick}
+          />
         </div>
 
         <div className={classes.root}>
-          <List component="AffectedDnsList">
+          <List>
             {affectedDns &&
               affectedDns.map(domainName => (
                 <ListItem button key={domainName}>
