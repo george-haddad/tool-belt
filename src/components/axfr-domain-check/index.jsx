@@ -14,7 +14,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import superagent from 'superagent';
 import moment from 'moment';
 
-import styles from './axfr-online-domain-check-styles';
+import styles from './styles';
 
 type Props = {
   classes: any,

@@ -10,7 +10,7 @@ import HourGlassIcon from '@material-ui/icons/HourglassEmpty';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import classNames from 'classnames';
 
-import styles from './circle-loading-button-styles';
+import styles from './styles';
 
 type Props = {
   classes: any,

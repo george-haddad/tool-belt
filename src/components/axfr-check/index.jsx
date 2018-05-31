@@ -11,7 +11,7 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import superagent from 'superagent';
 
-import styles from './axfr-online-check-styles';
+import styles from './styles';
 import CircleLoadingButton from '../circle-loading-button';
 
 type Props = {

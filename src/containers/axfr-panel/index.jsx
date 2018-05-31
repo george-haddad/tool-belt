@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
-import styles from './axfr-panel-styles';
+import styles from './styles';
 import AxfrOnlineCheck from '../../components/axfr-check';
 import AxfrOnlineSslCheck from '../../components/axfr-ssl-check';
 import AxfrOnlineDomainCheck from '../../components/axfr-domain-check';
