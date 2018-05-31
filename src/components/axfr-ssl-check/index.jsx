@@ -13,7 +13,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import { FormGroup } from '@material-ui/core';
 import superagent from 'superagent';
 
-import styles from './axfr-online-ssl-check-styles';
+import styles from './styles';
 
 type Props = {
   classes: any,
