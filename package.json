@@ -8,7 +8,7 @@
   "scripts": {
     "start": "parcel public/index.html",
     "build": "parcel build public/index.html --public-url ./",
-    "test": "eslint src && flow && flow check"
+    "test": "eslint src && flow"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.3",

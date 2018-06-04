@@ -28,16 +28,13 @@ type State = {
 };
 
 class AxfrOnlineSslCheck extends Component<Props, State> {
-  constructor(props) {
-    super(props);
-    this.state = {
-      loading: false,
-      domain: '',
-      heartbleed: false,
-      ccs: false,
-      error: false,
-    };
-  }
+  state = {
+    loading: false,
+    domain: '',
+    heartbleed: false,
+    ccs: false,
+    error: false,
+  };
 
   onKeyDown = (event: any) => {
     if (event.key === 'Enter') {
