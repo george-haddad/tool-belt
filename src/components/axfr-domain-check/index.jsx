@@ -11,9 +11,9 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import superagent from 'superagent';
 import moment from 'moment';
 
+import API from '../../api';
 import styles from './styles';
 
 type Props = {
@@ -67,14 +67,10 @@ class AxfrOnlineDomainCheck extends Component<Props, State> {
 
     if (domain.length > 0) {
       this.setState({ loading: true }, () => {
-        superagent
-          .get(
-            `https://thawing-meadow-89074.herokuapp.com/axfr/domain/${domain}`,
-          )
-          .set('Accept', 'application/vnd.tool-belt+json; version=1.0')
+        API.get(`axfr/domain/${domain}`)
           .then(res => {
-            if (res.body) {
-              const data = res.body;
+            if (res.data) {
+              const { data } = res.data;
 
               this.setState({
                 loading: false,

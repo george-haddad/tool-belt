@@ -9,7 +9,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import superagent from 'superagent';
+import API from '../../api';
 
 import styles from './styles';
 import CircleLoadingButton from '../circle-loading-button';
@@ -64,14 +64,10 @@ class AxfrOnlineCheck extends Component<Props, State> {
 
     if (domain.length > 0) {
       this.setState({ loading: true, axfrStatus: 'start' }, () => {
-        superagent
-          .get(
-            `https://thawing-meadow-89074.herokuapp.com/axfr/check/${domain}`,
-          )
-          .set('Accept', 'application/vnd.tool-belt+json; version=1.0')
+        API.get(`axfr/check/${domain}`)
           .then(res => {
-            if (res.body.affected_dns) {
-              const affectedDns = res.body.affected_dns;
+            if (res.data.affected_dns) {
+              const affectedDns = res.data.affected_dns;
 
               let axfrStatus;
               if (affectedDns.length === 0) {
