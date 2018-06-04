@@ -1,4 +1,6 @@
-const styles = theme => ({
+// @flow
+
+const styles = (theme: any) => ({
   buttonRoot: {
     display: 'flex',
     alignItems: 'center',

@@ -1,4 +1,6 @@
-const styles = theme => ({
+// @flow
+
+const styles = (theme: any) => ({
   paper: {
     padding: theme.spacing.unit * 2,
     textAlign: 'center',
@@ -17,6 +19,9 @@ const styles = theme => ({
   },
   progressRoot: {
     flexGrow: 1,
+  },
+  margin: {
+    margin: theme.spacing.unit,
   },
 });
 

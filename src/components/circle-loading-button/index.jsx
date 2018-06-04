@@ -13,7 +13,7 @@ import classNames from 'classnames';
 import styles from './styles';
 
 type Props = {
-  classes: any,
+  classes: $Call<typeof styles>,
   loading: boolean,
   icon: 'start' | 'clean' | 'vulnrable',
   handleButtonClick: Function,

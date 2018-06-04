@@ -1,4 +1,6 @@
-const styles = theme => ({
+// @flow
+
+const styles = (theme: any) => ({
   paper: {
     padding: theme.spacing.unit * 2,
     textAlign: 'center',
@@ -29,6 +31,9 @@ const styles = theme => ({
   ul: {
     backgroundColor: 'inherit',
     padding: 0,
+  },
+  margin: {
+    margin: theme.spacing.unit,
   },
 });
 

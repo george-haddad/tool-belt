@@ -1,9 +1,11 @@
+// @flow
+
 import green from '@material-ui/core/colors/green';
 import blue from '@material-ui/core/colors/blue';
 import red from '@material-ui/core/colors/red';
 import grey from '@material-ui/core/colors/grey';
 
-const styles = theme => ({
+const styles = (theme: any) => ({
   wrapper: {
     margin: theme.spacing.unit,
     position: 'relative',
