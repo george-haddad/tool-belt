@@ -66,8 +66,8 @@ class AxfrOnlineCheck extends Component<Props, State> {
       this.setState({ loading: true, axfrStatus: 'start' }, () => {
         API.get(`axfr/check/${domain}`)
           .then(res => {
-            if (res.body.affected_dns) {
-              const affectedDns = res.body.affected_dns;
+            if (res.data.affected_dns) {
+              const affectedDns = res.data.affected_dns;
 
               let axfrStatus;
               if (affectedDns.length === 0) {

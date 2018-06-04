@@ -68,8 +68,8 @@ class AxfrOnlineSslCheck extends Component<Props, State> {
       this.setState({ loading: true }, () => {
         API.get(`axfr/check/ssl/${domain}`)
           .then(res => {
-            if (res.body) {
-              const { heartbleed, ccs } = res.body;
+            if (res.data) {
+              const { heartbleed, ccs } = res.data;
 
               this.setState({
                 loading: false,
