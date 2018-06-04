@@ -11,8 +11,8 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import { FormGroup } from '@material-ui/core';
-import superagent from 'superagent';
 
+import API from '../../api';
 import styles from './styles';
 
 type Props = {
@@ -66,11 +66,7 @@ class AxfrOnlineSslCheck extends Component<Props, State> {
 
     if (domain.length > 0) {
       this.setState({ loading: true }, () => {
-        superagent
-          .get(
-            `https://thawing-meadow-89074.herokuapp.com/axfr/check/ssl/${domain}`,
-          )
-          .set('Accept', 'application/vnd.tool-belt+json; version=1.0')
+        API.get(`axfr/check/ssl/${domain}`)
           .then(res => {
             if (res.body) {
               const { heartbleed, ccs } = res.body;
