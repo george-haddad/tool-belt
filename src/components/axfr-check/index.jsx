@@ -27,16 +27,13 @@ type State = {
 };
 
 class AxfrOnlineCheck extends Component<Props, State> {
-  constructor(props) {
-    super(props);
-    this.state = {
-      loading: false,
-      axfrStatus: 'start',
-      domain: '',
-      affectedDns: undefined,
-      error: false,
-    };
-  }
+  state = {
+    loading: false,
+    axfrStatus: 'start',
+    domain: '',
+    affectedDns: undefined,
+    error: false,
+  };
 
   onKeyDown = (event: any) => {
     if (event.key === 'Enter') {

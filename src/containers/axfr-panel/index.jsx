@@ -19,13 +19,10 @@ type State = {
 };
 
 class AxfrPanel extends Component<Props, State> {
-  constructor(props) {
-    super(props);
-    this.state = {
-      justify: 'flex-start',
-      alignItems: 'flex-start',
-    };
-  }
+  state = {
+    justify: 'flex-start',
+    alignItems: 'flex-start',
+  };
 
   render() {
     const { classes } = this.props;

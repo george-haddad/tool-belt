@@ -39,15 +39,12 @@ type State = {
 };
 
 class AxfrOnlineDomainCheck extends Component<Props, State> {
-  constructor(props) {
-    super(props);
-    this.state = {
-      loading: false,
-      domain: '',
-      error: false,
-      data: undefined,
-    };
-  }
+  state = {
+    loading: false,
+    domain: '',
+    error: false,
+    data: undefined,
+  };
 
   onKeyDown = (event: any) => {
     if (event.key === 'Enter') {

@@ -22,13 +22,10 @@ type State = {
 };
 
 class SidePanelButtons extends Component<Props, State> {
-  constructor(props) {
-    super(props);
-    this.state = {
-      justify: 'center',
-      alignItems: 'flex-start',
-    };
-  }
+  state = {
+    justify: 'center',
+    alignItems: 'flex-start',
+  };
 
   render() {
     const { classes, buttonData } = this.props;
