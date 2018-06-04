@@ -66,15 +66,38 @@ class AxfrOnlineDomainCheck extends Component<Props, State> {
       this.setState({ loading: true }, () => {
         API.get(`axfr/domain/${domain}`)
           .then(res => {
-            if (res.data) {
-              const { data } = res.data;
+            switch (res.status) {
+              case 200: {
+                if (res.data) {
+                  const { data } = res.data;
 
-              this.setState({
-                loading: false,
-                domain: this.state.domain,
-                error: false,
-                data,
-              });
+                  this.setState({
+                    loading: false,
+                    domain: this.state.domain,
+                    error: false,
+                    data,
+                  });
+                }
+                break;
+              }
+
+              case 204: {
+                this.setState({
+                  loading: false,
+                  domain: this.state.domain,
+                  error: false,
+                });
+                break;
+              }
+
+              default: {
+                this.setState({
+                  loading: false,
+                  domain: this.state.domain,
+                  error: false,
+                });
+                break;
+              }
             }
           })
           .catch(() => {
