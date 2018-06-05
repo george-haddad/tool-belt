@@ -48,6 +48,8 @@ class CircleLoadingButton extends Component<Props, {}> {
 
   render() {
     const { classes, loading, icon, handleButtonClick } = this.props;
+
+    // flow-disable-next-line
     const buttonClassname = classNames({
       [classes.buttonDefault]: icon === 'start',
       [classes.buttonClean]: icon === 'clean',
