@@ -51,8 +51,11 @@ class CircleLoadingButton extends Component<Props, {}> {
 
     // flow-disable-next-line
     const buttonClassname = classNames({
+      // flow-disable-next-line
       [classes.buttonDefault]: icon === 'start',
+      // flow-disable-next-line
       [classes.buttonClean]: icon === 'clean',
+      // flow-disable-next-line
       [classes.buttonVulnrable]: icon === 'vulnrable',
     });
 
