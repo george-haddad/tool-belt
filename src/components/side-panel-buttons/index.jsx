@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import styles from './styles';
 
 type Props = {
-  classes: any,
+  classes: $Call<typeof styles>,
   buttonData: Array<{
     name: string,
     route: string,

@@ -17,7 +17,7 @@ import API from '../../api';
 import styles from './styles';
 
 type Props = {
-  classes: any,
+  classes: $Call<typeof styles>,
 };
 
 type State = {
@@ -187,7 +187,7 @@ class AxfrOnlineDomainCheck extends Component<Props, State> {
         </Button>
 
         {loading && (
-          <div className={classes.root}>
+          <div className={classes.progressRoot}>
             <LinearProgress color="primary" />
           </div>
         )}

@@ -10,16 +10,16 @@ import AxfrPanel from './containers/axfr-panel';
 import AboutPanel from './containers/about-panel';
 import './App.css';
 
-type Props = {
-  classes: any,
-};
-
 const styles = () => ({
   root: {
     flexGrow: 1,
     alignItems: 'flex-start',
   },
 });
+
+type Props = {
+  classes: $Call<typeof styles>,
+};
 
 class App extends Component<Props, {}> {
   mainPanel = () => {

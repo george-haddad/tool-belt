@@ -10,7 +10,7 @@ import AxfrOnlineSslCheck from '../../components/axfr-ssl-check';
 import AxfrOnlineDomainCheck from '../../components/axfr-domain-check';
 
 type Props = {
-  classes: any,
+  classes: $Call<typeof styles>,
 };
 
 type State = {

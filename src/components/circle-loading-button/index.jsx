@@ -13,7 +13,7 @@ import classNames from 'classnames';
 import styles from './styles';
 
 type Props = {
-  classes: any,
+  classes: $Call<typeof styles>,
   loading: boolean,
   icon: 'start' | 'clean' | 'vulnrable',
   handleButtonClick: Function,
@@ -48,9 +48,14 @@ class CircleLoadingButton extends Component<Props, {}> {
 
   render() {
     const { classes, loading, icon, handleButtonClick } = this.props;
+
+    // flow-disable-next-line
     const buttonClassname = classNames({
+      // flow-disable-next-line
       [classes.buttonDefault]: icon === 'start',
+      // flow-disable-next-line
       [classes.buttonClean]: icon === 'clean',
+      // flow-disable-next-line
       [classes.buttonVulnrable]: icon === 'vulnrable',
     });
 

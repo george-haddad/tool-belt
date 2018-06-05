@@ -15,7 +15,7 @@ import styles from './styles';
 import CircleLoadingButton from '../circle-loading-button';
 
 type Props = {
-  classes: any,
+  classes: $Call<typeof styles>,
 };
 
 type State = {
