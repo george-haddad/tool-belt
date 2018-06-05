@@ -5,7 +5,6 @@ import blue from '@material-ui/core/colors/blue';
 import red from '@material-ui/core/colors/red';
 import grey from '@material-ui/core/colors/grey';
 
-// flow-disable-next-line
 const styles = (theme: any) => ({
   wrapper: {
     margin: theme.spacing.unit,
