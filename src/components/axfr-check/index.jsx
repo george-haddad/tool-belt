@@ -9,8 +9,8 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import API from '../../api';
 
+import API from '../../api';
 import styles from './styles';
 import CircleLoadingButton from '../circle-loading-button';
 
