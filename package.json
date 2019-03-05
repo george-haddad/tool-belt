@@ -8,6 +8,7 @@
   "scripts": {
     "start": "parcel public/index.html",
     "build": "parcel build public/index.html --public-url ./",
+    "postbuild": "cp src/_redirects dist/",
     "test": "eslint src"
   },
   "devDependencies": {
