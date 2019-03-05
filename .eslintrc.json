@@ -29,6 +29,7 @@
         "components": ["Link"],
         "specialLink": ["to"]
       }
-    ]
+    ],
+    "linebreak-style": ["error", "unix"]
   }
 }
