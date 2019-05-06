@@ -9,7 +9,9 @@
     "start": "parcel public/index.html",
     "build": "parcel build public/index.html --public-url ./",
     "postbuild": "cp src/_redirects dist/",
-    "test": "eslint src"
+    "test": "eslint src",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -42,6 +44,8 @@
     "react-dom": "^16.8.3",
     "react-router": "^5.0.0",
     "react-router-dom": "^4.4.0",
-    "react-tap-event-plugin": "^3.0.3"
-  }
+    "react-tap-event-plugin": "^3.0.3",
+    "snyk": "^1.161.1"
+  },
+  "snyk": true
 }
