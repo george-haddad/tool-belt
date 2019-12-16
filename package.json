@@ -21,13 +21,13 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
-    "eslint-plugin-flowtype": "4.3.0",
     "eslint": "6.7.2",
+    "eslint-plugin-flowtype": "4.3.1",
     "eslint-config-airbnb": "^18.0.0",
     "eslint-config-prettier": "^6.0.0",
-    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-import": "2.19.0",
     "eslint-plugin-jsx-a11y": "6.2.3",
-    "flow-bin": "^0.109.0",
+    "flow-bin": "^0.114.0",
     "eslint-plugin-react": "7.16.0",
     "flow-typed": "^2.5.2",
     "parcel-bundler": "^1.12.3",
@@ -45,7 +45,7 @@
     "react-router": "^5.0.1",
     "react-router-dom": "^5.0.1",
     "react-tap-event-plugin": "^3.0.3",
-    "snyk": "^1.230.5"
+    "snyk": "^1.259.0"
   },
   "snyk": true
 }
