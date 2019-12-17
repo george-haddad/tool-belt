@@ -11,7 +11,7 @@
     "postbuild": "cp src/_redirects dist/",
     "test": "eslint src",
     "snyk-protect": "snyk protect",
-    "prepublish": "npm run snyk-protect"
+    "prepublish": "yarn run snyk-protect"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -45,7 +45,7 @@
     "react-router": "^5.0.1",
     "react-router-dom": "^5.0.1",
     "react-tap-event-plugin": "^3.0.3",
-    "snyk": "^1.259.0"
+    "snyk": "^1.261.0"
   },
   "snyk": true
 }
