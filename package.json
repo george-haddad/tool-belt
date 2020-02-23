@@ -27,7 +27,7 @@
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-import": "2.20.1",
     "eslint-plugin-jsx-a11y": "6.2.3",
-    "flow-bin": "^0.117.0",
+    "flow-bin": "^0.118.0",
     "eslint-plugin-react": "7.18.2",
     "flow-typed": "^2.5.2",
     "parcel-bundler": "^1.12.3",
