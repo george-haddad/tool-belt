@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/george-haddad/tool-belt.git",
-  "author": "George Haddad <george.dma@gmail.com>",
+  "author": "George Haddad",
   "license": "MIT",
   "scripts": {
     "start": "parcel public/index.html",
